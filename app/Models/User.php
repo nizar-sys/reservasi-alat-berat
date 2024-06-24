@@ -43,4 +43,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function rentals()
+    {
+        return $this->hasMany(Rental::class, 'customer_id');
+    }
+
+    public function scopeCustomer($query)
+    {
+        return $query->where('role', 'customer');
+    }
 }

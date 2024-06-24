@@ -8,6 +8,7 @@ use App\Http\Controllers\DataTableController;
 use App\Http\Controllers\HeavyEquipmentController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProfitController;
+use App\Http\Controllers\RentalController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\RouteController;
@@ -41,4 +42,5 @@ Route::middleware('auth')->group(function() {
 
     Route::resource('users', UserController::class);
     Route::resource('heavy-equipments', HeavyEquipmentController::class);
+    Route::resource('rentals', RentalController::class);
 });
