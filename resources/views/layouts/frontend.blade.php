@@ -39,7 +39,7 @@
 
     <nav class="navbar navbar-expand-lg  navbar-light container-fluid py-3 position-fixed ">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><img src="{{ asset('fe_assets') }}/images/logo.png"
+            <a class="navbar-brand" href="index.html"><img src="{{ asset('fe_assets') }}/images/logos.png"
                     alt="logo"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
@@ -58,22 +58,23 @@
                             <a class="nav-link px-3" aria-current="page" href="/#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="#rental">Cars</a>
+                            <a class="nav-link px-3" href="#about-us">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="#pricing">Pricing</a>
+                            <a class="nav-link px-3" href="#rental">Vehicle</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#services">Services</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-3" href="#blog">Blog</a>
+                            <a class="nav-link px-3" href="#faq">FAQ</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-3" href="#action">Contact</a>
                         </li>
                         <li>
-                            <a class="nav-link px-3" href="{{ route('fe.heavy-equipments.index', []) }}">Car List</a>
+                            <a class="nav-link px-3" href="{{ route('fe.heavy-equipments.index', []) }}">Heavy Vehicle
+                                List</a>
                         </li>
                     </ul>
 
@@ -309,19 +310,60 @@
             <img src="{{ asset('fe_assets') }}/images/call-to-action-pattern.png" alt="pattern">
         </div>
 
-        <div class="container  py-5 my-5">
-            <div class="row py-5 ">
-                <div class=" col-10 col-sm-8 col-lg-6">
-                    <h2 class="">Let’s begin with <span class="text-primary">GoCar rental.</span> </h2>
+        <div class="container py-5 my-5">
+            <div class="row py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <h2>Contact Us</h2>
                 </div>
-                <div class=" col-lg-6">
-                    <p>Neque, vestibulum sed varius magna et at. Eu, adipiscing morbi augue justo. Nibh laoreet volutpat
-                        quis velit. Blandit aliquam donec sed morbi congue eget lorem viverra porta id lobortis.</p>
-                    <a href="contact.html" class="btn btn-primary mt-2">Contact us </a>
+                <div class="col-lg-6">
+                    <p>Kami siap membantu Anda dengan segala kebutuhan penyewaan alat berat. Jangan ragu untuk
+                        menghubungi kami melalui informasi di bawah ini</p>
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" target="_blank" class="contact-link">
+                                <div class="d-flex align-items-center">
+                                    <iconify-icon class="social-link-icon pe-2" icon="mdi:call"></iconify-icon>
+                                    <div>
+                                        <div>Call Us</div>
+                                        <div>62819999823764</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="contact-link mt-3">
+                                <div class="d-flex align-items-center">
+                                    <iconify-icon class="social-link-icon pe-2" icon="mdi:email"></iconify-icon>
+                                    <div>
+                                        <div>Email Us</div>
+                                        <div>heavy@gmail.com</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="#" target="_blank" class="contact-link">
+                                <div class="d-flex align-items-center">
+                                    <iconify-icon class="social-link-icon pe-2" icon="mdi:clock"></iconify-icon>
+                                    <div>
+                                        <div>Operational</div>
+                                        <div>09.00-21.00</div>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="#" target="_blank" class="contact-link mt-3">
+                                <div class="d-flex align-items-center">
+                                    <iconify-icon class="social-link-icon pe-2" icon="mdi:pin"></iconify-icon>
+                                    <div>
+                                        <div>Location</div>
+                                        <div>Jln. mawar no. 13</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-
         </div>
+
 
     </section>
 
@@ -331,10 +373,11 @@
             <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 my-5 py-5 ">
 
                 <div class=" col-md-4 mt-5 mt-md-0 ">
-                    <img src="{{ asset('fe_assets') }}/images/logo.png" alt="image">
-                    <p class="py-3">Vel non nibh vestibulum massa ullam corper bib endum ultrices venenatis, id id
-                        sed
-                        mass.</p>
+                    <img src="{{ asset('fe_assets') }}/images/logos.png" alt="image">
+                    <p class="py-3">Selamat datang di Heavy Equipment Rent, tujuan utama Anda untuk penyewaan alat
+                        berat. Dengan komitmen terhadap keunggulan dan fokus pada kepuasan pelanggan, kami berupaya
+                        menyediakan mesin dan peralatan berkualitas tinggi untuk memenuhi semua kebutuhan konstruksi dan
+                        industri Anda.</p>
                     <div class="d-flex align-items-center ">
                         <a href="#" target="_blank"><iconify-icon class="social-link-icon pe-4"
                                 icon="mdi:facebook"></iconify-icon></a>
@@ -355,17 +398,17 @@
                         <li class="nav-item me-2 mb-3">
                             <a class="nav-link px-4" aria-current="page" href="#">Home</a>
                         </li>
+                        <a class="nav-link px-4" href="#about-us">About Us</a>
                         <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="#">Booking</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="#">About</a>
+                            <a class="nav-link px-4" href="#rental">Vehicle</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="#">Cars</a>
+                            <a class="nav-link px-4" href="#services">Services</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
-                            <a class="nav-link px-4" href="#">Services</a>
+                            <a class="nav-link px-4" href="#faq">FAQ</a>
                         </li>
                         <li class="nav-item me-2 mb-3">
                             <a class="nav-link px-4" href="#">Contact</a>
@@ -383,14 +426,9 @@
         <div class="container">
             <footer class="d-flex flex-wrap justify-content-between align-items-center py-2 pt-4">
                 <div class="col-md-6 d-flex align-items-center">
-                    <p>© 2023 GoCar - All rights reserved</p>
+                    <p>© {{ now()->format('Y') }} Heavy Equipment - All rights reserved</p>
 
                 </div>
-                <div class="col-md-6 d-flex align-items-center justify-content-end">
-                    <p class="">© 2023 Free Template By:<a href="https://templatesjungle.com/"
-                            class="website-link" target="_blank"> <b><u>TemplatesJungle</u></b></a></p>
-                </div>
-
             </footer>
         </div>
     </section>
