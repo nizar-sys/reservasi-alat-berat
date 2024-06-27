@@ -57,6 +57,10 @@ class RentalController extends Controller
 
         Rental::create($validated);
 
+        if($request->filled('role')){
+            return redirect()->back()->with('success', 'Berhasil reservasi. Silahkan melakukan pembayaran.');
+        }
+
         return redirect(route('rentals.index'))->with('success', 'Data transaksi berhasil ditambahkan.');
     }
 
@@ -112,7 +116,7 @@ class RentalController extends Controller
 
             // delete old file
             $oldPath = public_path('/uploads/images/'.$rental->proof_of_payment);
-            if(file_exists($oldPath) && $rental->proof_of_payment != 'proof_of_payment.png'){
+            if($rental->proof_of_payment && file_exists($oldPath) && $rental->proof_of_payment != 'proof_of_payment.png'){
                 unlink($oldPath);
             }
         }
@@ -122,6 +126,10 @@ class RentalController extends Controller
         }
 
         $rental->update($validated);
+
+        if($request->filled('role')){
+            return redirect()->back()->with('success', 'Pembayaran berhasil. Silahkan tunggu konfirmasi dari admin.');
+        }
 
         return redirect(route('rentals.index'))->with('success', 'Data transaksi berhasil diperbarui.');
     }
@@ -137,7 +145,7 @@ class RentalController extends Controller
         $rental = Rental::findOrFail($id);
         // delete old file
         $oldPath = public_path('/uploads/images/'.$rental->proof_of_payment);
-        if(file_exists($oldPath) && $rental->proof_of_payment != ''){
+        if($rental->proof_of_payment && file_exists($oldPath) && $rental->proof_of_payment != 'proof_of_payment.png'){
             unlink($oldPath);
         }
         $rental->delete();

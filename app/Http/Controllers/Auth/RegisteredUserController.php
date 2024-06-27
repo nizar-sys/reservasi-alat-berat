@@ -43,13 +43,17 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'petugas'
+            'role' => $request->filled('role') ? $request->role : 'petugas',
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME)->with('success', 'Akun berhasil dibuat');
+        if ($user->role === 'petugas') {
+            return redirect(RouteServiceProvider::HOME)->with('success', 'Akun berhasil dibuat');
+        }
+
+        return redirect('/')->with('success', 'Akun berhasil dibuat');
     }
 }

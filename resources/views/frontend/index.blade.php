@@ -4,8 +4,20 @@
 
 @section('content')
     <!-- hero section start  -->
-    <section id="hero">
-        <div class="hero-content text-center bg-hero">
+    <section id="hero" class=" position-relative overflow-hidden">
+        <div class="pattern-overlay pattern-right position-absolute">
+            <img src="{{ asset('fe_assets') }}/images/hero-pattern-right.png" alt="pattern">
+        </div>
+        <div class="pattern-overlay pattern-left position-absolute">
+            <img src="{{ asset('fe_assets') }}/images/hero-pattern-left.png" alt="pattern">
+        </div>
+        <div class="hero-content container text-center">
+            <div class="row">
+                <div class="detail mb-4">
+                    <h1 class="">Find your <span class="text-primary"> rental heavy equipment </span> </h1>
+                    <p class="hero-paragraph">We have many best rental heavy equipment collections.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -32,15 +44,10 @@
                 </div>
             </div>
         </div>
-
-
-
     </section>
 
-
-
     <!-- rental section start  -->
-    <section id="rental" class="position-relative">
+    {{-- <section id="rental" class="position-relative">
         <div class="container my-5 py-5">
             <h2 class=" text-center my-5">List Heavy Vehicle For<span class="text-primary"> Reservation</span> </h2>
 
@@ -285,7 +292,7 @@
 
 
 
-    </section>
+    </section> --}}
 
     <!-- services section start  -->
     <section id="services">

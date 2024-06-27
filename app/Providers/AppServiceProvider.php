@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Carbon\Carbon;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
@@ -38,5 +39,7 @@ class AppServiceProvider extends ServiceProvider
         Blade::directive('currency_idr', function ($amount) {
             return "<?php echo 'Rp. ' . number_format($amount, 0, ',', '.'); ?>";
         });
+
+        Paginator::useBootstrap();
     }
 }

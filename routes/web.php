@@ -29,6 +29,7 @@ use App\Http\Controllers\TreeviewController;
 Route::get('/', [RouteController::class, 'home']);
 Route::get('/list-equipments', [RouteController::class, 'equipmentList'])->name('fe.heavy-equipments.index');
 Route::get('/list-equipments/{id}/rent-now', [RouteController::class, 'equipmentDetail'])->name('fe.heavy-equipments.show');
+Route::get('/my-transactions', [RouteController::class, 'transactionList'])->name('fe.heavy-equipments.transactions');
 
 require __DIR__.'/auth.php';
 

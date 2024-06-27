@@ -6,6 +6,7 @@ use App\Models\HeavyEquipment;
 use App\Models\Rental;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RouteController extends Controller
 {
@@ -27,13 +28,29 @@ class RouteController extends Controller
 
     public function equipmentList()
     {
-        return view('frontend.equipment_list');
+        $heavyEquipments = HeavyEquipment::query();
+        $heavyEquipments = $heavyEquipments->paginate(9);
+
+        return view('frontend.equipment_list', compact('heavyEquipments'));
     }
 
     public function equipmentDetail($id)
     {
-        $equipment = HeavyEquipment::find($id);
+        if(!Auth::check()) return redirect()->back()->with('error', 'Anda harus login terlebih dahulu');
 
-        return view('frontend.equipment_detail', compact('equipment'));
+        $equipment = HeavyEquipment::find($id);
+        $user = Auth::user();
+
+        return view('frontend.equipment_detail', compact('equipment', 'user'));
+    }
+
+    public function transactionList()
+    {
+        if(!Auth::check()) return redirect()->back()->with('error', 'Anda harus login terlebih dahulu');
+
+        $user = Auth::user();
+        $rentals = Rental::where('customer_id', $user->id)->get();
+
+        return view('frontend.transaction_list', compact('rentals'));
     }
 }
